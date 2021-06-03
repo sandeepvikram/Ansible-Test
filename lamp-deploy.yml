@@ -16,14 +16,5 @@
       yum:
         name: "{{apache_package2}}"
         state: present
-    - name: Install php packages for Update
-      package:
-        name: "{{item}}"
-        state: present
-      loop: "{{php_packages1}}"
-    - name: Install php packages for CentOS 
-      package:
-        name: "{{item}}"
-        state: present
-      loop: "{{php_packages2}}"
+
     
