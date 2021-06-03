@@ -1,6 +1,7 @@
 ---
 vars:
 apache_package1: apache2
+apache_package2: httpd
 php_packages1:
   - php 
   - libapache2-mod-php 

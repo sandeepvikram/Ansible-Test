@@ -1,6 +1,0 @@
----
-apache_package2: httpd
-php_packages2:
-  - php 
-  - php-mysql 
-  - php-fpm
