@@ -11,7 +11,7 @@
       when: ansible_facts ['distribution'] == "Ubuntu"  
     - name: install apache on CentOS
       yum:
-        name: "{{apache-package2}}"
+        name: "{{apache_package2}}"
         state: present
       when: ansible_facts ['distribution'] == "CentOS"      
    
