@@ -3,11 +3,17 @@
   hosts: all
   become: yes
   tasks:
-    - name: install apache
-      package:
-        name: "{{apache_package}}"
+    - name: install apache on Ubuntu
+      apt:
+        name: "{{apache_package1}}"
         update_cache: yes
         state: present
+      when: ansible_facts ['distribution'] == "Ubuntu"  
+    - name: install apache on CentOS
+      yum:
+        name: "{{apache-package2}}"
+        state: present
+      when: ansible_facts ['distribution'] == "CentOS"      
    
 
     
