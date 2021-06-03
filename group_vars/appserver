@@ -1,0 +1,8 @@
+---
+vars:
+apache_package1: apache2
+php_packages1:
+  - php 
+  - libapache2-mod-php 
+  - php-mysql 
+  - php-cli
