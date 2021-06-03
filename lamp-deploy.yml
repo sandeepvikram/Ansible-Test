@@ -1,6 +1,6 @@
 ---
 - name: Installing LAMP Architecture 
-  hosts: appserver
+  hosts: all
   become: yes
   tasks:
     - name: Fail if the OS is not Ubuntu or CentOS
