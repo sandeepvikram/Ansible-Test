@@ -3,18 +3,10 @@
   hosts: all
   become: yes
   tasks:
-    - name: Fail if the OS is not Ubuntu or CentOS
-      fail:
-        msg: The playbook only supports Ubuntu and CentOS
-      when: ansible_facts ['distribution'] != "Ubuntu" and ansible_facts ['distribution'] != "CentOS"
-    - name: Update Ubuntu packages and install apache
-      apt:
-        name: "{{apache_package1}}"
-        update_cache: yes
-        state: present         
-    - name: Update CentOS packages and install apache
-      yum:
-        name: "{{apache_package2}}"
+    - name: install apache
+      package:
+        name: "{{apache_package}}"
         state: present
+   
 
     
