@@ -1,29 +1,29 @@
 ---
-name: Installing LAMP Architecture 
-hosts: appserver
-become: yes
-tasks:
-  - name: Fail if the OS is not Ubuntu or CentOS
-    fail:
-      msg: The playbook only supports Ubuntu and CentOS
-    when: ansible_facts ['distribution'] != "Ubuntu" and ansible_facts ['distribution'] != "CentOS"
-  - name: Update Ubuntu packages and install apache
-    apt:
-      name: "{{apache_package1}}"
-      update_cache: yes
-      state: present         
-  - name: Update CentOS packages and install apache
-    yum:
-      name: "{{apache_package2}}"
-      state: present
-  - name: Install php packages for Update
-    package:
-      name: "{{item}}"
-      state: present
-    loop: "{{php_packages1}}"
-  - name: Install php packages for CentOS 
-    package:
-      name: "{{item}}"
-      state: present
-    loop: "{{php_packages2}}"
-                      
+- name: Installing LAMP Architecture 
+  hosts: appserver
+  become: yes
+  tasks:
+    - name: Fail if the OS is not Ubuntu or CentOS
+      fail:
+        msg: The playbook only supports Ubuntu and CentOS
+      when: ansible_facts ['distribution'] != "Ubuntu" and ansible_facts ['distribution'] != "CentOS"
+    - name: Update Ubuntu packages and install apache
+      apt:
+        name: "{{apache_package1}}"
+        update_cache: yes
+        state: present         
+    - name: Update CentOS packages and install apache
+      yum:
+        name: "{{apache_package2}}"
+        state: present
+    - name: Install php packages for Update
+      package:
+        name: "{{item}}"
+        state: present
+      loop: "{{php_packages1}}"
+    - name: Install php packages for CentOS 
+      package:
+        name: "{{item}}"
+        state: present
+      loop: "{{php_packages2}}"
+    
