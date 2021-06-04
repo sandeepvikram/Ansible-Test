@@ -1,6 +1,6 @@
 ---
 - name: Installing LAMP Architecture 
-  hosts: webserver
+  hosts: all
   become: yes
   tasks:
     - name: install apache on Ubuntu
@@ -16,6 +16,7 @@
       when: ansible_facts ['distribution'] == "CentOS"  
     - name: install php packages for Ubuntu
       apt:
+        update_cache: yes
         name: "{{php_packages1}}"
         state: present 
     - name: install php packages for CentOS
