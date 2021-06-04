@@ -17,9 +17,9 @@
     - name: Install LAMP Packages
       apt: name={{ item }} update_cache=yes state=latest
       loop: [ 'python3-pymysql', 'php', 'php-mysql', 'libapache2-mod-php' ]
-    - name: Install LAMP Packages
-      apt: name={{ item }} update_cache=yes state=latest
-      loop: [ 'python3-pymysql', 'php', 'php-mysql', 'php-fpm' ]  
+      when: "'{{ ansible_distribution}}' == 'Ubuntu' and '{{ ansible_distribution_release }}' == 'precise'"
+
+     
 
          
    
