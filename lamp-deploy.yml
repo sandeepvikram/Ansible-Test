@@ -1,6 +1,6 @@
 ---
 - name: Installing LAMP Architecture 
-  hosts: all
+  hosts: webserver
   become: yes
   tasks:
     - name: install apache on Ubuntu
