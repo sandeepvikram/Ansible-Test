@@ -5,4 +5,4 @@
   tasks:
     - name: Install LAMP Packages
       yum: name={{ item }} state=latest
-      loop: [ 'httpd', 'python3-pymysql', 'php', 'php-mysql', 'php-fpm' ]
+      loop: [ 'httpd', 'php', 'php-mysql', 'php-fpm' ]
