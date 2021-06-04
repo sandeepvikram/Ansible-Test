@@ -1,6 +1,6 @@
 ---
 - name: Installing LAMP Architecture 
-  hosts: 172.31.21.18
+  hosts: appserver
   become: yes
   tasks:
     - name: Install LAMP Packages
