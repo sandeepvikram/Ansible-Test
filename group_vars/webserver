@@ -2,8 +2,10 @@
 apache_package1: apache2
 apache_package2: httpd
 vars: 
-  php_packages1: ['python3-pymysql', 'php', 'php-mysql', 'libapache2-mod-php]
-  
+  php_packages1:
+  - php
+  - php-mysql
+  - libapache2-mysql-php
  
 
     
