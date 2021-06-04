@@ -9,7 +9,7 @@
       when: "'{{ ansible_distribution}}' == 'Ubuntu'"
     - name: Install LAMP Packages
       yum: name={{ item }}  state=latest
-      loop: [ 'httpd', 'php', 'php-mysql', 'libapache2-mod-php' ]
+      loop: [ 'httpd', 'php', 'php-mysql', 'php-fpm' ]
       when: "'{{ ansible_distribution}}' == 'CentOS'"
      
 
