@@ -15,17 +15,14 @@
         state: present
       when: ansible_facts ['distribution'] == "CentOS"  
     - name: install php packages for Ubuntu
-      package:
-        name: "{{item}}"
-        state: present
-      loop: "{{php_packages1}}"
-      when: ansible_facts ['distribution'] == "Ubuntu 
+      apt:
+        name: "{{php_packages1}}"
+        state: present 
     - name: install php packages for CentOS
-      package:
-        name: "{{item}}"
+      yum:
+        name: "{{php_packages2}}"
         state: present
-      loop: "{{php_packages2}}"
-      when: ansible_facts ['distribution'] == "CentOS"     
+         
    
 
     
