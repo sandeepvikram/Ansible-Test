@@ -1,0 +1,8 @@
+---
+- name: Installing LAMP Architecture 
+  hosts: 172.31.21.18
+  become: yes
+  tasks:
+    - name: Install LAMP Packages
+      yum: name={{ item }} state=latest
+      loop: [ 'httpd', 'python3-pymysql', 'php', 'php-mysql', 'php-fpm' ]
