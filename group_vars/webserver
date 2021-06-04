@@ -1,12 +1,16 @@
 ---
 apache_package1: apache2
 apache_package2: httpd
-php_packages1:
+vars: 
+  php_packages1:
   - php
-  - libapache2-mod-php 
-  - php-mysql 
+  - libapache2-mod-php
+  - php-mysql
   - php-cli
-php_packages2:
-  - php 
-  - php-mysql 
-  - php-fpm  
+  php_packages2:
+  - php
+  - php-mysql
+  - php-fpm
+    
+
+
