@@ -14,10 +14,10 @@
         name: "{{apache_package2}}"
         state: present
       when: ansible_facts ['distribution'] == "CentOS" 
-    - name: install python apt
-      apt:
-        name: python-apt
-        state: present  
+    - name: Install LAMP Packages
+      apt: name={{ item }} update_cache=yes state=latest
+      loop: [ 'python3-pymysql', 'php', 'php-mysql', 'libapache2-mod-php' ]
+
          
    
 
