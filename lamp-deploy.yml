@@ -19,10 +19,6 @@
       when: "'{{ ansible_distribution}}' == 'CentOS'" 
       notify:
         installed httpd server 
-    - name: copy the php info page
-      copy:
-        dest: "{{info_page_path}}"
-        src: "info.php"
     - name: ensure the apache2 service is running
       service:
         name: 'apache2'
