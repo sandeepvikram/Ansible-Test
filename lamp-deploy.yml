@@ -29,12 +29,14 @@
       service:
         name: 'apache2'
         enabled: yes
-        state: started 
+        state: started
+      when: "'{{ ansible_distribution}}' == 'Ubuntu'"   
     - name: ensure the httpd service is running
       service:
         name: 'httpd'
         enabled: yes
-        state: started    
+        state: started
+      when: "'{{ ansible_distribution}}' == 'CentOS'"      
   handlers:
     - name: installed 'apache2' server
       debug:
