@@ -1,8 +1,0 @@
----
-- name: Installing LAMP Architecture 
-  hosts: appserver
-  become: yes
-  tasks:
-    - name: Install LAMP Packages
-      yum: name={{ item }} state=latest
-      loop: [ 'httpd', 'php', 'php-mysql', 'php-fpm' ]
