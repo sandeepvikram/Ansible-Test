@@ -1,6 +1,6 @@
 ---
 - name: Installing LAMP Architecture 
-  hosts: webserver
+  hosts: all
   become: yes
   tasks: 
     - name: Execution Fail if the distribution is not Ubuntu
