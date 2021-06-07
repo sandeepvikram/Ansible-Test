@@ -9,7 +9,12 @@
       when: ansible_facts ['distribution'] != "Ubuntu" and ansible_facts ['distribution'] != "CentOS"
     - name: Install LAMP Packages for Ubuntu
       apt: name={{ item }} update_cache=yes state=latest
-      loop: "{{php_packages1}}"
+      loop: [ 'apache2', 'python3-pymysql', 'php', 'php-mysql', 'libapache2-mod-php' ]
+      when: "'{{ ansible_distribution}}' == 'Ubuntu'"
+    - name: Install LAMP Packages for CentOS
+      yum: name={{ item }}  state=latest
+      loop: [ 'httpd', 'php', 'php-mysql', 'php-fpm' ]
+      when: "'{{ ansible_distribution}}' == 'CentOS'"  
    
       
      
