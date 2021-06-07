@@ -11,11 +11,34 @@
       apt: name={{ item }} update_cache=yes state=latest
       loop: [ 'apache2', 'python3-pymysql', 'php', 'php-mysql', 'libapache2-mod-php' ]
       when: "'{{ ansible_distribution}}' == 'Ubuntu'"
+      notify:
+        installed apache server
     - name: Install LAMP Packages for CentOS
       yum: name={{ item }}  state=latest
       loop: [ 'httpd', 'php', 'php-mysql', 'php-fpm' ]
-      when: "'{{ ansible_distribution}}' == 'CentOS'"  
-   
+      when: "'{{ ansible_distribution}}' == 'CentOS'" 
+      notify:
+        installed httpd server 
+    - name: copy the php info page
+      copy:
+        dest: "{{info_page_path}}"
+        src: "info.php"
+    - name: ensure the apache2 service is running
+      service:
+        name: 'apache2'
+        state: started 
+    - name: ensure the httpd service is running
+      service:
+        name: 'httpd'
+        state: started    
+  handlers:
+    - name: installed apache server
+      debug:
+        msg: "apache server is installed using package 'apache2'"
+    - name: installed httpd server
+      debug:
+        msg: "httpd server is installed using package 'httpd'"
+
       
      
 
