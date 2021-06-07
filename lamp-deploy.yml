@@ -22,7 +22,9 @@
     - name: copy the php info page
       copy:
         dest: "{{info_page_path}}"
-        src: "info.php"    
+        src: "info.php"
+      notify:
+        - log info page is copied      
     - name: ensure the apache2 service is running
       service:
         name: 'apache2'
@@ -40,6 +42,9 @@
     - name: installed httpd server
       debug:
         msg: "httpd server is installed using package 'httpd'"
+    - name: log info page is copied
+      debug:
+        msg: "info page copied to {{info_page_path}}"   
 
       
      
