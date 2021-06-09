@@ -7,7 +7,7 @@ tomcat_user: tomcat
 tomcat_directory: /opt/tomcat 
 tomcat_shell: /bin/false
 tomcat_check_dir: /opt/tomcat/conf
-tomcat_directories_for-group_permissions:
+tomcat_directories_for_group_permissions:
   - /opt/tomcat/webapps
   - /opt/tomcat/work
   - /opt/tomcat/temp
