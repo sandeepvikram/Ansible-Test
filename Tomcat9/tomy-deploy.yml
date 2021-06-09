@@ -5,7 +5,7 @@
   tasks:
     - name: Update Ubuntu packages and install open-JDK11
       apt:
-        name: "{{java_package1}}"
+        name: openjdk-11-jdk
         update_cache: yes
         state: present
     - name: Ensure group tomcat exists
