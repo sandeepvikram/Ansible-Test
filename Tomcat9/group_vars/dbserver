@@ -6,3 +6,4 @@ tomcat_group: tomcat
 tomcat_user: tomcat
 tomcat_directory: /opt/tomcat 
 tomcat_shell: /bin/false
+tomcat_check_dir: /opt/tomcat/conf
