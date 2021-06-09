@@ -28,6 +28,6 @@
         dest: "{{tomcat_download_destination}}"
     - name: untar the tomcat file
       unarchive:
-        remote_src: "{{tomcat_download_destination}}"
-        remote_dest: "{{tomcat_directory}}"
+        src: "{{tomcat_download_destination}}"
+        dest: "{{tomcat_directory}}"
 
