@@ -46,10 +46,30 @@
         state: directory
     - name: update group permissions for webapps work temp logs
       file:
-        path: "{{tomcat_directories_for-group_permissions}}"
+        path: /opt/tomcat/webapps
         recurse: true
         group: "{{tomcat_group}}"
         owner: "{{tomcat_group}}"
         state: directory
-
+    - name: update group permissions for webapps work temp logs
+      file:
+        path: /opt/tomcat/work
+        recurse: true
+        group: "{{tomcat_group}}"
+        owner: "{{tomcat_group}}"
+        state: directory  
+    - name: update group permissions for webapps work temp logs
+      file:
+        path: /opt/tomcat/temp
+        recurse: true
+        group: "{{tomcat_group}}"
+        owner: "{{tomcat_group}}"
+        state: directory       
+    - name: update group permissions for webapps work temp logs
+      file:
+        path: /opt/tomcat/logs
+        recurse: true
+        group: "{{tomcat_group}}"
+        owner: "{{tomcat_group}}"
+        state: directory 
         
