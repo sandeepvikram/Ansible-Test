@@ -1,6 +1,6 @@
 ---
 - name: Installing tomcat 9
-  hosts: all
+  hosts: dbserver
   become: yes
   tasks:
     - name: Update Ubuntu packages and install open-JDK11
