@@ -14,7 +14,7 @@
         state: present 
     - name: Ensure tomcat home directory exsists
       file:
-        name: "{{tomcat_directory}}"
+        path: "{{tomcat_directory}}"
         state: directory        
     - name: Ensure user tomcat exsists
       user:
