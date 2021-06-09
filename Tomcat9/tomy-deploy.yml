@@ -43,5 +43,13 @@
       file:
         path: "{{ tomcat_check_dir }}" 
         mode: u=rwx,g=rx
-        state: directory    
+        state: directory
+    - name: update group permissions for webapps work temp logs
+      file:
+        path: "{{item}}"
+        recurse: true
+        group: "{{tomcat_group}}"
+        owner: "{{tomcat_group}}"
+        state: directory
+
         
