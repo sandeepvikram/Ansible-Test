@@ -34,7 +34,7 @@
         extra_opts: [--strip-components=1]    
     - name: update group permissions for tomcat dir
       file:
-        path: "{{ tomcat_home_dir }}"
+        path: "{{ tomcat_dirrectory }}"
         group: "{{ tomcat_group }}"
         owner: "{{ tomcat_group }}"
         recurse: yes
