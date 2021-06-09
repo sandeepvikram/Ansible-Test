@@ -62,10 +62,7 @@
       service: 
         name: tomcat.service
         enabled: yes
-        state: started
-    - name: Change ssh port to 8888
-      set_fact:
-        ansible_port: 8888      
+        state: started      
   handlers:
     - name: reload daemon
       systemd:
