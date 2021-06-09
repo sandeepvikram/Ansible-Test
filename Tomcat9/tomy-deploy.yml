@@ -32,8 +32,11 @@
         dest: "{{tomcat_directory}}"
         remote_src: yes
         extra_opts: [--strip-components=1]    
-    - name: Check if the tomcat is extracted
-      stat:
-        path: "{{tomcat_check_dir}}"
-        register: tomcat_conf
+    - name: update group permissions for tomcat dir
+      file:
+        path: "{{ tomcat_home_dir }}"
+        group: "{{ tomcat_group }}"
+        owner: "{{ tomcat_group }}"
+        recurse: yes
+        state: directory
         
