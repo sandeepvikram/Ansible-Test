@@ -44,32 +44,12 @@
         path: "{{ tomcat_check_dir }}" 
         mode: u=rwx,g=rx
         state: directory
-    - name: update group permissions for webapps work temp logs
+    - name: update recursive ownership for tomcat
       file:
-        path: /opt/tomcat/webapps
+        path: "{{ item }}"
         recurse: true
-        group: "{{tomcat_group}}"
-        owner: "{{tomcat_group}}"
+        group: "{{ tomcat_group }}"
+        owner: "{{ tomcat_group }}"
         state: directory
-    - name: update group permissions for webapps work temp logs
-      file:
-        path: /opt/tomcat/work
-        recurse: true
-        group: "{{tomcat_group}}"
-        owner: "{{tomcat_group}}"
-        state: directory  
-    - name: update group permissions for webapps work temp logs
-      file:
-        path: /opt/tomcat/temp
-        recurse: true
-        group: "{{tomcat_group}}"
-        owner: "{{tomcat_group}}"
-        state: directory       
-    - name: update group permissions for webapps work temp logs
-      file:
-        path: /opt/tomcat/logs
-        recurse: true
-        group: "{{tomcat_group}}"
-        owner: "{{tomcat_group}}"
-        state: directory
+      loop: "{{ tomcat_directories_for_group_permissions }}"
         
