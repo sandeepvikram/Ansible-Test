@@ -69,4 +69,15 @@
         name: tomcat.service
         daemon_reload: yes
         state: started          
-      
+    - name: copy the tomcat users file
+      template:
+        src: tomcat-users.xml.j2
+        dest: "{{ tomcat_users_xml }}"
+      notify:
+        - restart tomcat
+    - name: copy the context file
+      copy:
+        src: context.xml
+        dest: "{{ tomcat_manager_context }}"
+      notify:
+        - restart tomcat  
