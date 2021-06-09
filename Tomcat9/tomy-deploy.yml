@@ -26,7 +26,9 @@
       get_url:
         url: "{{tomcat_download_url}}"
         dest: "{{tomcat_download_destination}}"
-    - unarchive:
-        src: "{{tomcat_download_url}}"
+    - name: extract tomcat packages
+      unarchive:
+        src: "{{tomcat_download_destination}}"
         dest: "{{tomcat_directory}}"
+        remote_src: yes
 
