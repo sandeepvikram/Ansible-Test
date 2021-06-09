@@ -39,4 +39,9 @@
         owner: "{{ tomcat_group }}"
         recurse: yes
         state: directory
+    - name: update group permissions for tomcat conf directory
+      file:
+        path: "{{ tomcat_check_dir }}" 
+        mode: u=rwx,g=rx
+        state: directory    
         
