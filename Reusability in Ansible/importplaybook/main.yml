@@ -2,8 +2,12 @@
 - name: Install Softwares
   import_playbook: sample1.yml
   vars:
-    install_softwares:
+    install_softwares1:
       - git
-      - tree
+      - tree     
+      
+  import_playbook: sample2.yml 
+  vars:
+    install_softwares2:
       - wget
-      - elinks
+      - elinks   
