@@ -10,7 +10,7 @@
         state: present
     - name: Install Softwares
       package:
-        name: "{{items}}"
+        name: "{{item}}"
         state: present
       loop: "{{install_softwares}}"    
       
