@@ -6,8 +6,4 @@
       - git
       - tree     
 
-  import_playbook2: sample2.yml 
-  vars:
-    install_softwares2:
-      - wget
-      - elinks   
+   
