@@ -5,6 +5,9 @@
     install_softwares:
       - git
       - wget
-      - elinks   
+      - elinks
+      - tree
+      
+     
 
    
