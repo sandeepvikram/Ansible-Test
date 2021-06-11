@@ -13,3 +13,7 @@
         name: "{{item}}"
         state: present
       loop: "{{install_softwares}}"
+    - name: Create Files
+      file:
+        name: vikram.txt
+        state: file  
