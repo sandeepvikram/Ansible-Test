@@ -1,0 +1,17 @@
+---
+- name: Install Utility softwares
+  become: yes
+  hosts: all
+  tasks:
+    - name: Install python apt
+      apt:
+        name: Install python apt
+        update_cache: yes
+        state: present
+    - name: Install Softwares
+      package:
+        - name: "{{items}}"
+          state: present
+      loop: "{{install_softwares}}"    
+      
+       
