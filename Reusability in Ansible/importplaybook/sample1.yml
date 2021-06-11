@@ -5,13 +5,11 @@
   tasks:
     - name: Install python apt
       apt:
-        name: python-apt
+        name: Install python apt
         update_cache: yes
         state: present
     - name: Install Softwares
       package:
-        name: "{{item}}"
-        state: present
-      loop: "{{install_softwares}}"    
-      
-       
+        - name: "{{items}}"
+          state: present
+      loop: "{{install_softwares}}"
