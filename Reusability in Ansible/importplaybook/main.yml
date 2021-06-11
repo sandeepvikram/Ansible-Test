@@ -1,6 +1,6 @@
 - name: Install Softwares
   import_playbook1: sample1.yml
-  when: hosts == 'webserver'
+  when: hosts == [webserver]
   vars:
     install_softwares1:
       - git
